@@ -1,4 +1,4 @@
-class tree{
+/*class tree{
     int val;
     tree left;
     tree right;
@@ -29,5 +29,20 @@ public class inorder {
         inorder(root.left);
         System.out.print(root.val + " ");
         inorder(root.right);
+    }
+}
+ */
+class inorder{
+    int val;
+    inorder left;
+    inorder right;
+    inorder(int val){
+        this.val = val;
+        this.left = null;
+        this.right = null;
+
+    }
+    public static void main(String[] args){
+        inorder root = new inorder(0)
     }
 }
