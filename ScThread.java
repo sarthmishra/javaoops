@@ -1,10 +1,10 @@
 class ATM{
-    synchronized public void checkBalance(String name){
+     synchronized public void checkBalance(String name){
        System.out.printf("%s is checking",name);
        try{Thread.sleep(1000);}catch(Exception e){}
        System.out.print("Balance");
     }
-    synchronized public void withdraw(String name,int amount){
+     synchronized public void withdraw(String name,int amount){
         System.out.printf("%s is withdrawing ",name);
         try{Thread.sleep(1000);} catch(Exception e){}
         System.out.print(amount);
@@ -41,3 +41,6 @@ public class ScThread {
         c2.start();
     }
 }
+/*cd /Users/sarthmishra/Desktop/javaoops
+javac ScThread.java
+java ScThread */
