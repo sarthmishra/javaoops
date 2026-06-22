@@ -32,7 +32,7 @@ class MineData{
 }
 
 class Producer extends Thread{
-    MineData data;
+    MineData data;//reference variable
     public Producer(MineData d){
         data = d;
     }

@@ -23,7 +23,7 @@ class MyThread3 extends Thread{
         this.d = d; 
     }
     public void run(){
-        d.Display("Welcome All ");
+        d.Display(". Welcome All ");
     }
 }
 
