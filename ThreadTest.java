@@ -21,7 +21,7 @@ class MyThread extends Thread{
         while(true){
             System.out.println(count++);
            try{
-             Thread.sleep(100);
+             Thread.sleep(3000);
            }
            catch(InterruptedException e){
             System.out.print(e);

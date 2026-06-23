@@ -18,7 +18,13 @@ class Teller extends Thread{
     }
     public void run(){
         for (int i = 0; i < 3; i++){
-            money.deposit(name, amount);
+            try{
+                Thread.sleep(2000);
+                money.deposit(name, amount);
+            }catch(Exception e){
+
+            }
+            
         }
     }
 
@@ -29,10 +35,11 @@ class Teller extends Thread{
 public class BankSimulation {
     public static void main(String[] args){
 BankAccount account = new BankAccount();
- Teller t1 = new Teller(account, "Teller-A", 500);
- Teller t2 = new Teller(account, "Teller-B", 300);
-  t1.start();
-        t2.start();
+ Teller t1 = new Teller(account, "Teller-A ", 500);
+ Teller t2 = new Teller(account, "Teller-B ", 300);
+
+    t1.start();
+    t2.start();
 
     }//money sirf ek arrow hai jo BankAccount object ki 
     // taraf point karta hai — object ek hi hai, dono threads us tak money ke zariye pahunchte hain
