@@ -1,18 +1,26 @@
 import java.sql.*;
+import java.util.*;
 class Database{
 public static void main(String[] args)throws Exception
 {
 Class.forName("org.sqlite.JDBC");
 Connection con  = DriverManager.getConnection("jdbc:sqlite:univ.db");
-Statement stm = con.createStatement();
-ResultSet rs = stm.executeQuery("Select * from dept");
-int dno;
-String dname;
+PreparedStatement stm = con.prepareStatement("SELECT * FROM student WHERE deptno = ?");
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter Dept Number ");
+int deptno  = sc.nextInt();
+
+stm.setInt(1, deptno);
+ResultSet rs = stm.executeQuery();
+//int dno;
+//String dname;
 while(rs.next())
 {
-dno = rs.getInt("deptno");
-dname = rs.getString("dname");
-System.out.print(dno + " " + dname);
+System.out.print(rs.getInt("roll")+ " ");
+System.out.print(rs.getString("name")+ " ");
+System.out.print(rs.getString("city")+ " ");
+System.out.print(rs.getInt(4)+ " ");
 }
+stm.close();
 }
 }
