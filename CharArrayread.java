@@ -1,5 +1,6 @@
 import java.io.*;
 public class CharArrayread {
+    //Exactly like ByteArrayInputStream
     public static void main(String[] args)throws Exception {
         char[] c= {'a','b','c','d','e','f','g','h','i'};
         CharArrayReader cr = new CharArrayReader(c);

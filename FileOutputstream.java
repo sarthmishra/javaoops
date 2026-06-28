@@ -1,0 +1,6 @@
+/**
+ * FileOutputstream
+ */
+public class FileOutputstream {
+
+}
